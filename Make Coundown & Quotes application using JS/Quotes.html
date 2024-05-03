@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* background-color: darkslategray; */
+            background: linear-gradient(to top, #33ccff 0%, #ff99cc 100%);
+        }
+        img{
+            width: 70%;
+            height: 650px;
+            margin-left: 250px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://media.licdn.com/dms/image/D4D12AQFTZmlT9-Faug/article-inline_image-shrink_400_744/0/1681824125265?e=1720051200&v=beta&t=NTGDe5GmIpVQY-_HSh2lQcafglasfXQ9xjvSLfIbJ1M">
+</body>
+</html>
+
+<script>
+    let arr = ["https://cdn.quotesgram.com/img/70/12/173239684-steve-jobs-coding-quote.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3-HNOqvLtkzTnxeGvsMevqyIMfKSi0YTYONvZQ3_SMg&s","https://www.thecoderpedia.com/wp-content/uploads/2020/06/Coding-Quotes.png?x86257", "https://media.licdn.com/dms/image/D4D12AQFTZmlT9-Faug/article-inline_image-shrink_400_744/0/1681824125265?e=1720051200&v=beta&t=NTGDe5GmIpVQY-_HSh2lQcafglasfXQ9xjvSLfIbJ1M"];
+
+    let currenttime=0
+
+    setInterval(() => {
+        document.querySelector("img").src=arr[currenttime]
+        currenttime=(currenttime+1)%arr.length
+    }, 2000);
+
+</script>
