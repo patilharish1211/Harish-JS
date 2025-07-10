@@ -1,33 +1,211 @@
-*{
+*
+{
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.slider {
+
+body
+{
+    height: 100vh;
     width: 100%;
-    overflow: hidden;
-  }
+    background-image: url('img/bg2.jpeg');
+    background-position: center;
+    background-size: cover; 
+    /* background-color: cadetblue; */
 
-  .slide-container {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
+}
 
-  .card {
-    flex: 0 0 300px; /* Card width */
-    margin: 0 10px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
+.main-box   
+{
+    height: 800px;
+    width: 700px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(3px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
 
-  .card img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-  }
+}
 
-  .card-content {
+#main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    
+}
+
+
+.image1
+{
+    height: 100px;
+    width: 20%;
+    background-image: url('img/mist.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: +999;
+    position: absolute;
+    top: 2%;
+    left: 20%;
+}
+.image3
+{
+    height: 200px;
+    width: 50%;
+    background-image: url('img/mist.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: +999;
+    position: absolute;
+    top: 2%;
+    left: 0%;
+}
+.rightleft  
+{
+    animation-name: righttoleft;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    transition: all 0.3s ease-in-out;
+}
+.rightleft2
+{
+    animation-name: righttoleft2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    transition: all 0.3s ease-in-out;
+}
+.updown
+{
+    animation-name: uptodown;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes righttoleft {
+    0%{
+        transform: translateX(20px);
+    }    
+    50%
+    {
+        transform: translateX(900px);
+    }
+    100%
+    {
+        transform: translateX(0px);
+    }
+}
+@keyframes righttoleft2 {
+    0%{
+        transform: translateX(20px);
+    }    
+    50%
+    {
+        transform: translateX(100px);
+    }
+    100%
+    {
+        transform: translateX(0px);
+    }
+}
+@keyframes uptodown {
+    0%{
+        transform: translateY(0px);
+    }    
+    50%
+    {
+        transform: translateY(-25px);
+    }
+    100%
+    {
+        transform: translateY(0px);
+
+    }
+}
+.image2
+{
+    height: 700px;
+    width: 15%;
+    background-image: url('img/snow.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: +999;
+    position: absolute;
+    top: 2%;
+    left: 80%;
+}
+
+
+.id-id
+{
+    font-size: 25px;
+    font-weight: 500;
+    background-color: crimson;
+    /* padding: 10px 20px; */
+    transition: all 0.3s ease;
+    padding: 0px 20px;
+}
+.id-email
+{
     padding: 20px;
-  }
+    transition: all 0.3s ease;
+
+}
+.id-name1
+{
+    padding: 20px;
+    transition: all 0.3s ease;
+
+}
+.id-name2
+{
+    padding: 20px;
+    transition: all 0.3s ease;
+
+}
+.id-img
+{
+    transition: all 0.3s ease;
+}
+
+tr:hover .id-id{
+    transform: scale(1.1);
+    z-index: 999;
+}
+
+tr:hover .id-email{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    z-index: -1;
+
+}
+
+tr:hover .id-name1  {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+
+tr:hover .id-name2 {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+tr:hover .id-img
+{
+    transform: scale(1.1);
+}

@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather Api</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    
+    <div class="main-box">
+        <div id="main" style="text-align: center;">
+                <table id="table-main">
+                    <thead >
+                        <tr >
+                            <th style="border-bottom: 2px solid white;">ID</th>
+                            <th style="border-bottom: 2px solid white;">Email</th>
+                            <th style="border-bottom: 2px solid white;">Name</th>
+                            <th style="border-bottom: 2px solid white;">Name-2</th>
+                        </tr>
+                    </thead> <br>
+                    <tbody id="table-body" >
+                        
+                    </tbody>
+                </table>
+        </div>
+    </div>
 
-<h1>User Card Slider</h1>
+<div class="image1 rightleft"></div>
+<div class="image3 rightleft2"></div>
+<div class="image2 updown"></div>
 
-<div class="slider">
-  <div class="slide-container" id="slide-container">
-    <!-- User data cards will be appended here -->
-  </div>
-</div>
+   
 
-
-<script src="main.js"></script>
 </body>
 </html>
+
+ <script>
+    
+    function FetchData()
+       {
+           fetch('https://reqres.in/api/users?page=2')
+           .then((res)=>res.json())
+           .then((data)=>CardList(data.data)) 
+           .catch((err)=>console.log(err))
+        }
+        FetchData();
+        
+        function CardList(data)
+        {
+            let main=document.getElementById("table-body")
+
+        let store= data.map((el)=>{
+            return `
+            <tr>
+                        <td class="id-id">${el.id}</td> 
+                        <td class="id-email">${el.email}</td>
+                        <td class="id-name1">${el.first_name}</td>
+                        <td class="id-name2">${el.last_name}</td>
+                        <td class="id-img"><img src=${el.avatar} alt=""></td>
+                    </tr>
+            `
+            
+        })
+            main.innerHTML=store.join("")
+        }
+
+
+
+</script> 

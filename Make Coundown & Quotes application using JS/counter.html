@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="counter.css">
+</head>
+<body>
+
+    <div class="main-timer-con">
+        <h2>Click On Button Given Below </h2>
+        <p> ( Only One Min Timer Is Run )</p>
+
+        <h1 class="timer-h1">
+        </h1>
+        <button  class="btn2"  id="btn">
+            Run Timer
+        </button>
+        <button  class="btn2" id="btn2">Stop</button>
+
+    </div>
+</body>
+</html>
+
+<script>
+
+
+    let btn =document.getElementById("btn")
+    let btn2 =document.getElementById("btn2")
+
+    btn.addEventListener("click",()=>{
+        let timer=60;
+        stop= setInterval(()=>{
+            timer--
+        if(timer<0)
+        {
+            clearInterval(id)
+        }
+        let id = document.querySelector("h1").innerText=" 00 :" + " " + timer
+        },1000)
+    })
+
+    btn2.addEventListener("click",()=>{
+        clearInterval(stop)
+    })
+    
+
+</script>
